@@ -1,0 +1,92 @@
+plugins {
+  id 'java'
+  id 'idea'
+  id 'application'
+  id 'org.springframework.boot' version '2.6.0'
+  id 'io.spring.dependency-management' version '1.1.0'
+}
+
+ext {
+  logstashVersion = '5.2'
+}
+
+group = 'ru.master'
+//version = '1.0.1.10'
+version = "${VER_NUMBER}.${BUILD_ID}"
+sourceCompatibility = '11'
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  mavenCentral()
+  //mavenLocal()
+  flatDir {
+    dirs 'libs'
+  }
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.kafka:spring-kafka'
+
+  /*implementation 'org.springframework.kafka:spring-kafka:2.3.7.RELEASE'*/
+  /*implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.5.17.RELEASE'*/
+  /*implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '3.0.0'*/
+
+  compileOnly 'org.projectlombok:lombok'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+  annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.kafka:spring-kafka-test'
+
+  // Logger
+  implementation "ch.qos.logback:logback-classic"
+  implementation "ch.qos.logback:logback-core"
+  implementation "ch.qos.logback:logback-access"
+  implementation "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
+  implementation "org.slf4j:slf4j-api"
+  implementation "com.fasterxml.jackson.core:jackson-databind"
+  implementation "com.fasterxml.jackson.core:jackson-core"
+  implementation "com.fasterxml.jackson.core:jackson-annotations"
+  implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+  annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+  implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+  implementation 'jakarta.validation:jakarta.validation-api:2.0.2'
+
+  implementation "org.modelmapper:modelmapper:2.3.0"
+  implementation 'javax.xml.bind:jaxb-api:2.3.0'
+  implementation 'com.sun.xml.bind:jaxb-impl:2.3.0'
+  implementation 'com.sun.xml.bind:jaxb-core:2.3.0'
+  implementation 'javax.activation:activation:1.1.1'
+  implementation 'com.google.guava:guava:23.0'
+  implementation group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
+  implementation 'com.nimbusds:nimbus-jose-jwt:6.3'
+  implementation 'org.springframework.security:spring-security-core:5.2.2.RELEASE'
+
+  /*implementation name: 'itextpdf_patched-5.5.5'*/
+
+  // https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path
+  implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.7.0'
+
+  implementation "ru.sberinsur.insure:int-commons:${int_commons_version}"
+  //compile "ru.sberinsur.insure:int-commons:${int_commons_version}:sources"
+  //Gradle: javax.xml.bind:jaxb-api:2.3.0
+  /*org.apache.commons:commons-lang3:3.12.0*/
+
+
+
+  // Lombok
+  /*compileOnly 'org.projectlombok:lombok:1.18.12'
+  annotationProcessor 'org.projectlombok:lombok:1.18.12'*/
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}

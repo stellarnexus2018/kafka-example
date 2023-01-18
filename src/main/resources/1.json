@@ -1,0 +1,93 @@
+{
+    "CreateSOTIRqList": {
+        "CreateSOTIRq": {
+            "SPName": "SOL",
+            "AgreementInfo": {
+                "InsuranceFromDate": "2022-11-18",
+                "AgreementNumber": "0000581735",
+                "ParentApplicationNo": "332626135",
+                "ProductName": "Управляемый капитал - Рубли",
+                "AgreementDate": "2022-11-18",
+                "AgreementCurrency": "RUB",
+                "AgreementPolicySeries": "КБГКОСЛР60",
+                "ProductType": "UNIT_LINKED",
+                "InsuranceToDate": "2082-12-05",
+                "BankProductNo": "272510",
+                "AgreementNo": "92790021"
+            },
+            "RqUID": "47b9e2ed514c43c180543a3ce3295897",
+            "SystemID": "SOL",
+            "SCName": "ASBS",
+            "CustomerInfo": {
+                "lastName": "ТЕСТ",
+                "firstName": "ТЕСТ",
+                "gender": "Женский",
+                "residentRf": true,
+                "applicantDocumentsList": {
+                    "applicantDocument": {
+                        "documentDate": "2016-01-01",
+                        "documentType": "21",
+                        "documentNumber": "001001",
+                        "documentCodeIns": "001-001",
+                        "documentSeries": "01 01",
+                        "documentName": "Паспорт гражданина РФ",
+                        "documentInstitution": "ГУ МВД НИЖНИЙ НОВГОРОД"
+                    }
+                },
+                "addressList": {
+                    "address": [
+                        {
+                            "addressFull": "125375, МОСКВА, МОСКВА, ТВЕРСКАЯ, д. 1",
+                            "addressType": "REGISTRATION"
+                        },
+                        {
+                            "addressFull": "125375, МОСКВА, МОСКВА, ТВЕРСКАЯ, д. 1",
+                            "addressType": "ACTUAL"
+                        }
+                    ]
+                },
+                "middleName": "ТЕСТ",
+                "applicantPhone": "905-0000000",
+                "birthDate": "1981-01-01",
+                "email": "L00@MAIL.RU"
+            },
+            "Application": {
+                "ApplicationCRM": "",
+                "DocumentList": {
+                    "DocumentsInfo": [
+                        {
+                            "DocumentScan": true,
+                            "DocumentECMId": "{AD6A0B3C-6890-4D32-8D12-0EE58E2CEC88}",
+                            "DocumentName": "AD6A0B3C-6890-4D32-8D12-0EE58E2CEC88.pdf"
+                        }
+                    ]
+                },
+                "TypeApplicant": "HOLDER",
+                "ApplicationNo": "332628341",
+                "ApplicationChangesType": {
+                    "ChangeBaseAsset": {
+                        "ApplicationType": "techChange#32",
+                        "ChangeBA": "ESG Сбалансированный",
+                        "ChangeBACode": "2212837",
+                        "ChangeDate": "2022-11-22",
+                        "TypeOptionCode": "2212739",
+                        "OptionName": "Смена портфеля"
+                    }
+                },
+                "ApplicationStatus": "Документы приняты",
+                "SigningType": "Подпись в МП СБОЛ",
+                "ApplicationNumber": "СБ\/05\/АА\/332626135-01",
+                "ApplicationMode": "accept",
+                "ApplicationCreateDate": "2022-11-22",
+                "BusinessProcessNo": "5191",
+                "ApplicationSalesChannel": "VSP"
+            },
+            "RqTm": "2022-11-22T15:29:42.409000+03:00",
+            "BankInfo": {
+                "AgencyId": "23467",
+                "BranchId": "984",
+                "RegionId": "2222"
+            }
+        }
+    }
+}

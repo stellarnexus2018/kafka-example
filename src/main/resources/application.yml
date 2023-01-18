@@ -1,0 +1,31 @@
+service:
+  name: ${spring.application.name}
+  versions: ${spring.application.version}
+spring:
+  application:
+    name: kafka-example
+    version: 1.0
+  cloud:
+    consul:
+      discovery:
+        instanceId: 1
+  aop:
+    proxy-target-class: false
+kafka:
+  bootstrapServers: localhost:9092
+  errorTopic: ${spring.application.name}_error_topic
+  properties:
+    "[max.request.size]": 52428800
+    "[compression.type]": gzip
+    "[max.poll.records]": 1
+  groupConsumer:
+    groupId: ${spring.application.name}
+    pollTimeout: 10000
+    concurrency: 4
+    topic: ${spring.application.name}_group
+    max-poll-records: 1
+  producers:
+    kafka-example:
+      groupTopic: ${spring.application.name}_group
+    igor-topic-1:
+      groupTopic: igor-topic-1
